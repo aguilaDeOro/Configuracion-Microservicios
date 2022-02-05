@@ -7,7 +7,7 @@ Routes:
     -    
         DownstreamPathTemplate: /api/Users
         DownstreamScheme: http
-        UpstreamPathTemplate: /api/Users
+        UpstreamPathTemplate: /api/UsersUno
         ServiceName: Microservices.Demo.Auth.API
         UpstreamHttpMethod: 
             - Get
