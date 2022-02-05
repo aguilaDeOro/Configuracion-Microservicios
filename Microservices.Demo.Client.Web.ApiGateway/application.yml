@@ -3,6 +3,12 @@ WebApiGatewaySettings:
     AllowedChatOrigins:
         - https://localhost:44300
         - https://localhost:44398
+Aggregates:
+- UpstreamPathTemplate: "/api/polizasYProductos"
+  RouteKeys:
+  - keyPolizas
+  - keyProductos
+  Aggregator: AgregadoPolizasYProductos        
 Routes: 
     -    
         DownstreamPathTemplate: /api/Users
@@ -51,6 +57,7 @@ Routes:
         DownstreamScheme: http
         UpstreamPathTemplate: /api/Products
         ServiceName: Microservices.Demo.Product.API
+        key: keyProductos
         UpstreamHttpMethod:
             - Get
         FileCacheOptions: 
@@ -127,6 +134,7 @@ Routes:
         DownstreamScheme: http
         UpstreamPathTemplate: /api/Reporte/consultaPolizas
         ServiceName: Microservices.Demo.Report.API
+        key: keyPolizas
         UpstreamHttpMethod: 
             - Get
         FileCacheOptions: 
