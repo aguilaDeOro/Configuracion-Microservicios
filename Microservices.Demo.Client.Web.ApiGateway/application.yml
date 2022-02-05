@@ -150,8 +150,10 @@ Routes:
 Aggregates:
     - 
         RouteKeys:
-            - keyPolizas
-            - keyProducts
+            - 
+                keyPolizas
+            - 
+                keyProducts
         UpstreamPathTemplate: "/api/polizasYProductos"            
         Aggregator: AgregadoPolizasYProductos                    
 GlobalConfiguration:
