@@ -7,12 +7,13 @@ Aggregates:
 - UpstreamPathTemplate: "/api/polizasYProductos"
   RouteKeys:
   - keyPolizas
-  - keyProductos
+  - keyProducts
   Aggregator: AgregadoPolizasYProductos        
 Routes: 
     -    
         DownstreamPathTemplate: /api/Users
         DownstreamScheme: http
+        key: keyUsersMain
         UpstreamPathTemplate: /api/Users
         ServiceName: Microservices.Demo.Auth.API
         UpstreamHttpMethod: 
@@ -29,6 +30,7 @@ Routes:
     -
         DownstreamPathTemplate: /api/Users
         DownstreamScheme: http
+        key: keyUsers
         UpstreamPathTemplate: /api/Users
         ServiceName: Microservices.Demo.Auth.API
         UpstreamHttpMethod:
@@ -39,6 +41,7 @@ Routes:
     -    
         DownstreamPathTemplate: /api/Products/{everything}
         DownstreamScheme: http
+        key: keyProductsEverything
         UpstreamPathTemplate: /api/Products/{everything}
         ServiceName: Microservices.Demo.Product.API
         UpstreamHttpMethod: 
@@ -55,9 +58,9 @@ Routes:
     -
         DownstreamPathTemplate: /api/Products
         DownstreamScheme: http
+        key: keyProducts
         UpstreamPathTemplate: /api/Products
         ServiceName: Microservices.Demo.Product.API
-        key: keyProductos
         UpstreamHttpMethod:
             - Get
         FileCacheOptions: 
@@ -72,6 +75,7 @@ Routes:
     -
         DownstreamPathTemplate: /api/Offers
         DownstreamScheme: http
+        key: keyOffers
         UpstreamPathTemplate: /api/Offers
         ServiceName: Microservices.Demo.Policy.API
         UpstreamHttpMethod: 
@@ -88,6 +92,7 @@ Routes:
     -
         DownstreamPathTemplate: /api/Policies
         DownstreamScheme: http
+        key: keyPolicies
         UpstreamPathTemplate: /api/Policies
         ServiceName: Microservices.Demo.Policy.API
         UpstreamHttpMethod: 
@@ -102,6 +107,7 @@ Routes:
     -
         DownstreamPathTemplate: /api/Policies/{number}
         DownstreamScheme: http
+        key: keyPoliciesNumber
         UpstreamPathTemplate: /api/Policies/{number}
         ServiceName: Microservices.Demo.Policy.API
         UpstreamHttpMethod: 
@@ -118,6 +124,7 @@ Routes:
     -
         DownstreamPathTemplate: /api/PoliciesSearch
         DownstreamScheme: http
+        key: keyPoliciesSearch
         UpstreamPathTemplate: /api/PoliciesSearch
         ServiceName: Microservices.Demo.PolicySearch.API
         UpstreamHttpMethod: 
@@ -132,9 +139,9 @@ Routes:
     -    
         DownstreamPathTemplate: /api/Reporte/consultaPolizas
         DownstreamScheme: http
+        key: keyPolizas
         UpstreamPathTemplate: /api/Reporte/consultaPolizas
         ServiceName: Microservices.Demo.Report.API
-        key: keyPolizas
         UpstreamHttpMethod: 
             - Get
         FileCacheOptions: 
