@@ -146,7 +146,14 @@ Routes:
 #                -
         RouteClaimsRequirement:
             userType: SALESMAN      
-        DangerousAcceptAnyServerCertificateValidator: true                     
+        DangerousAcceptAnyServerCertificateValidator: true  
+Aggregates:
+    - 
+        RouteKeys:
+            - keyPolizas
+            - keyProducts
+        UpstreamPathTemplate: "/api/polizasYProductos"            
+        Aggregator: AgregadoPolizasYProductos                    
 GlobalConfiguration:
     RequestIdKey: OcRequestId
     AdministrationPath: /administration
