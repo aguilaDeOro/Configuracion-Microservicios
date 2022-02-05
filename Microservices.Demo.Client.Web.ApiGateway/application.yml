@@ -7,7 +7,7 @@ Routes:
     -    
         DownstreamPathTemplate: /api/Users
         DownstreamScheme: http
-        UpstreamPathTemplate: /api/UsersUno
+        UpstreamPathTemplate: /api/Users
         ServiceName: Microservices.Demo.Auth.API
         UpstreamHttpMethod: 
             - Get
@@ -123,9 +123,9 @@ Routes:
             userType: SALESMAN   
         DangerousAcceptAnyServerCertificateValidator: true
     -    
-        DownstreamPathTemplate: /api/Reporte
+        DownstreamPathTemplate: /api/Reporte/consultaPolizas
         DownstreamScheme: http
-        UpstreamPathTemplate: /api/Reporte
+        UpstreamPathTemplate: /api/Reporte/consultaPolizas
         ServiceName: Microservices.Demo.Report.API
         UpstreamHttpMethod: 
             - Get
